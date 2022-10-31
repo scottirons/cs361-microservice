@@ -9,7 +9,8 @@ f.close()
 key_val = {}
 
 for resource in json_dict["resources"]:
-    key_val[resource['name']] = resource['id']
+    if resource['latitude']:
+        key_val[resource['name']] = resource['id']
 
 
 with open('language_codes.json', "w") as outfile:
